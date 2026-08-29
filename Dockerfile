@@ -15,4 +15,8 @@ PY
 COPY src ./src
 COPY artifacts ./artifacts
 
-ENTRYPOINT ["python", "-m", "src.inference.predict"]
+EXPOSE 8501
+
+#ENTRYPOINT ["python", "-m", "src.inference.predict"]
+
+CMD ["streamlit", "run", "src/app.py", "--server.address=0.0.0.0", "--server.port=8501"]
