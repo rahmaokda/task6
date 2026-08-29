@@ -1,0 +1,28 @@
+project:
+  name: image-caption-generator
+  seed: 42
+
+data:
+  image_size: 224
+  max_caption_length: 30
+  min_word_frequency: 2
+
+model:
+  encoder: resnet50
+  embed_size: 256
+  hidden_size: 512
+  num_layers: 1
+  dropout: 0.5
+
+training:
+  batch_size: 64
+  epochs: 20
+  learning_rate: 0.001
+  patience: 3
+
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  features: data/features
+  checkpoints: checkpoints
+  artifacts: artifacts
